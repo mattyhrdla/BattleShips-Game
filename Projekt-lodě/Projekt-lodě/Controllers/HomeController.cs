@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace YourNamespace.Pages
+namespace projekt_lodě.Models;
 {
     public class StartGameModel : PageModel
     {
