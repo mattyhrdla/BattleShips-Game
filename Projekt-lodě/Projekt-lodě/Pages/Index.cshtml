@@ -1,0 +1,71 @@
+﻿@page
+@model IndexModel
+@{
+    if (Request.Method == "POST")
+    {
+        var player1 = Request.Form["player1"];
+        var name1 = Request.Form["name1"];
+        var player2 = Request.Form["player2"];
+        var name2 = Request.Form["name2"];
+
+        if (string.IsNullOrEmpty(player1) || string.IsNullOrEmpty(name1) || string.IsNullOrEmpty(player2) || string.IsNullOrEmpty(name2))
+        {
+            <p>Vyberte roli hráče a zadejte jména obou hráčů.</p>
+        }
+        else
+        {
+            // Pokud byly vybrány oba role a jména, přesměrujeme se na uvodni stránku
+            Response.Redirect("/uvodni");
+        }
+    }
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battleship Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #BDBDBD;
+            padding-top: 50px;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Battleship Game</h1>
+    <form id="player-form" method="post">
+        <label for="player1">Vyber hráče:</label>
+        <select id="player1" name="player1">
+            <option value="1">Player 1</option>
+            <option value="2">Player 2</option>
+        </select>
+        <br>
+        <label for="name1">Zadej jméno pro hráče 1:</label>
+        <input type="text" id="name1" name="name1">
+        <br>
+        <label for="player2">Vyber hráče:</label>
+        <select id="player2" name="player2">
+            <option value="1">Player 1</option>
+            <option value="2">Player 2</option>
+        </select>
+        <br>
+        <label for="name2">Zadej jméno pro hráče 2:</label>
+        <input type="text" id="name2" name="name2">
+        <br>
+        <button type="submit">Start Game</button>
+    </form>
+</body>
+</html>
