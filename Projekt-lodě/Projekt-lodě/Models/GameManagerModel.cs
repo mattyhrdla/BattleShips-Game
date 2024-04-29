@@ -15,18 +15,18 @@ public enum CellState
     Miss
 }
 class GameManagerModel
-{
+{ 
     public Player player1;
     public Player player2;
     Game game;
 
-    bool PlayerJoined(int id)
+    bool PlayerJoined(int id, string name)
     {
 
         if (id == 1 && player1 == null)
-            player1 = new Player(id);
+            player1 = new Player(id, name);
         else if (id == 2 && player2 == null)
-            player2 = new Player(id);
+            player2 = new Player(id, name);
         else
             return false;
 

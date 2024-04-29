@@ -1,5 +1,4 @@
-﻿usi
-
+﻿
 namespace BattleShips;
 
 public class Game
