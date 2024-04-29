@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BattleShips;
 
-namespace projekt_lodě.Models;
+namespace BattleShips.Models;
 
 public enum CellState
 {
